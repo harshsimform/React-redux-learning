@@ -2,7 +2,7 @@
 // "useDispatch" hook is used to update the state of the component and return a new state.
 
 import { useSelector, useDispatch } from "react-redux";
-import { counterActions } from "../store";
+import { counterActions } from "../store/counterSlice";
 import classes from "./Counter.module.css";
 
 const Counter = () => {
