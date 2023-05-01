@@ -11,19 +11,16 @@ const counterReducer = (state = initialState, action) => {
       return {
         ...state,
         counter: state.counter + 1,
-        showCounter: state.showCounter,
       };
     case "increase":
       return {
         ...state,
         counter: state.counter + action.amount,
-        showCounter: state.showCounter,
       };
     case "decrement":
       return {
         ...state,
         counter: state.counter - 1,
-        showCounter: state.showCounter,
       };
     case "toggle":
       return {
