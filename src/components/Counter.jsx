@@ -2,6 +2,7 @@
 // "useDispatch" hook is used to update the state of the component and return a new state.
 
 import { useSelector, useDispatch } from "react-redux";
+import { counterActions } from "../store";
 import classes from "./Counter.module.css";
 
 const Counter = () => {
@@ -10,20 +11,20 @@ const Counter = () => {
   const showToggle = useSelector((state) => state.showCounter);
 
   const incrementHandler = () => {
-    dispatch({ type: "increment" });
+    dispatch(counterActions.increment());
   };
 
   // using action payload i.e. amount
   const increaseHandler = () => {
-    dispatch({ type: "increase", amount: 5 });
+    dispatch(counterActions.increase(5)); // { type : SOME_UNIQUE_IDENTIFIER, payload: 5}
   };
 
   const decrementHandler = () => {
-    dispatch({ type: "decrement" });
+    dispatch(counterActions.decrement());
   };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: "toggle" });
+    dispatch(counterActions.toggle());
   };
 
   return (
